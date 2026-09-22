@@ -15,7 +15,6 @@ const client = new Client({
 });
 
 const TOKEN = process.env.TOKEN;
-client.login(TOKEN);
 const TICKET_CATEGORY_ID = "1508046271561334845";
 
 const ROLES = {
