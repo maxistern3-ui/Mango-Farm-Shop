@@ -26,32 +26,54 @@ const ROLES = {
 };
 
 const farms = {
-    kelp: [
-        "Mauschu Beginner",
-        "Mauschu Newbie",
-        "Mauschu Advanced",
-        "Mauschu Premium"
-    ],
-
-    stash: [
-        "Basic Stash",
-        "Advanced Stash",
-        "Premium Stash"
-    ],
-
-    bonemeal: [
-        "Bonemeal Starter",
-        "Bonemeal Advanced"
-    ],
-
-    tnt: [
-        "TNT Starter",
-        "TNT Advanced"
+    autocrafter: [
+        "🧰 Auto TNT Crafter V1 = 5M (5 Crafters)",
+        "🧰 Auto TNT Crafter V2 = 20M (15 Crafters)",
+        "🦴 Auto Boneblock/Bonemeal Crafter V1 = 20M (15 Crafters)",
+        "🦴 Auto Boneblock/Bonemeal Crafter V2 = 40M (30 Crafters)"
     ],
 
     sweetberry: [
-        "Sweet Berry Beginner",
-        "Sweet Berry Pro"
+        "🫐 Sweet Berries V1 = 180M",
+        "🫐 Sweet Berries V2 = 250M"
+    ],
+
+    kelp: [
+        "🪵 IKEA V1 Full = 50M → 25M/HR",
+        "🌿 Mauschu Newbie = 20M → 12M/HR",
+        "🌿 Mauschu Beginner = 40M → 20M/HR",
+        "🌿 EtZ V1 = 115M → 6000+ Bone Blocks/Hour",
+        "🌿 Mauschu Inter = 125M → 35M/HR",
+        "🌿 Mauschu Advanced = 250M → 45M/HR",
+        "⚡ Mauschu V7 = 400M → 60M/HR",
+        "⚡ Mauschu V8 = 600M → 70M/HR",
+        "⚡ Mauschu V9 = 800M → 85M/HR",
+        "👑 Mauschu V10 = 1B → 300M/HR",
+        "🍔 McD Kelp (240 Smokers) = 220M",
+        "🍟 McD Kelp (1680 Smokers) = 550M",
+        "🥭 Mango67 V1 Kelp Farm = 60M (Not Filled) (400 Smokers)",
+        "🥭 Mango67 V1 Kelp Farm = 90M (Filled) (400 Smokers)",
+        "🥭 Mango67 V2 Kelp Farm = 270M (Not Filled) (1000+ Smokers)",
+        "🥭 Mango67 V2 Kelp Farm = 300M (Filled) (1000+ Smokers)",
+        "🥭 Mango67 VX Kelp Farm = Custom Order",
+        "📦 Shulker Loader = 2M Each"
+    ],
+
+    stash: [
+        "🎨 Any Color Stash = 20M",
+        "🎰 Gambling Stash = 5M",
+        "⚔️ Re-Gear Stash = 10M",
+        "🔮 AMETHYST DESIGN = 35M",
+        "🐦‍⬛ BLACKSTONE DESIGN = 70M",
+        "👑 ROYAL JAPAN DESIGN = 80M",
+        "⬛ SPAWNER DESIGN = 90M",
+        "🦴 BLACKSTONE X SKULL DESIGN = 100M",
+        "🗝️ ANCIENT STONE DESIGN = 120M",
+        "🎴 BLACKSTONE GAMBLE BASE = 125M",
+        "🧧 RED DOJO DESIGN = 130M",
+        "🪙 COPPER PEARL GAMBLE ROOM = 140M",
+        "🌍 MUD DESIGN = 150M",
+        "🥢 JAPANESE BLACKSTONE STASH DESIGN = 220M"
     ]
 };
 
@@ -106,33 +128,28 @@ client.on("interactionCreate", async interaction => {
             const menu = new StringSelectMenuBuilder()
                 .setCustomId("farm_category")
                 .setPlaceholder("Select a Farm Category")
-                .addOptions([
-                    {
-                        label: "Kelp Farms",
-                        value: "kelp",
-                        emoji: "🌿"
-                    },
-                    {
-                        label: "Stashes",
-                        value: "stash",
-                        emoji: "📦"
-                    },
-                    {
-                        label: "Bone Meal Farms",
-                        value: "bonemeal",
-                        emoji: "🦴"
-                    },
-                    {
-                        label: "TNT Farms",
-                        value: "tnt",
-                        emoji: "💥"
-                    },
-                    {
-                        label: "Sweet Berry Farms",
-                        value: "sweetberry",
-                        emoji: "🍓"
-                    }
-                ]);
+ .addOptions([
+    {
+        label: "Auto Crafter",
+        value: "autocrafter",
+        emoji: "🧰"
+    },
+    {
+        label: "Sweet Berry Farms",
+        value: "sweetberry",
+        emoji: "🫐"
+    },
+    {
+        label: "Kelp Farms",
+        value: "kelp",
+        emoji: "🌿"
+    },
+    {
+        label: "Stashes",
+        value: "stash",
+        emoji: "📦"
+    }
+]);
 
             const row = new ActionRowBuilder()
                 .addComponents(menu);
